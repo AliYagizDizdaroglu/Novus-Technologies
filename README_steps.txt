@@ -15,3 +15,6 @@ Decision: Added an html input box to better visualize the operation.
 
 Result: Created both .sh and .bat files for both Unix and Windows platforms.
 
+
+Note: Might take up to 30 seconds to produce an output text, please be aware.
+
