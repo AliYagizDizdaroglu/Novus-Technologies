@@ -18,3 +18,4 @@ Result: Created both .sh and .bat files for both Unix and Windows platforms. App
  
 Note: Might take up to 30 seconds to produce an output text, please be aware.
 
+Limitation: Could not use any cloud platform to host the app as they are paid services for projects which contains large sized files like this one.
