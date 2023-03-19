@@ -13,8 +13,8 @@ Utilizing the model file via a FastAPI app, input is taken and output is given v
 
 Decision: Added an html input box to better visualize the operation.
 
-Result: Created both .sh and .bat files for both Unix and Windows platforms.
+Result: Created both .sh and .bat files for both Unix and Windows platforms. App runs on host="127.0.0.1", port=8000
 
-
+ 
 Note: Might take up to 30 seconds to produce an output text, please be aware.
 
