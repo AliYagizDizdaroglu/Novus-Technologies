@@ -6,7 +6,12 @@ Decision: Had to slice the batches into smaller pieces since max sequence length
 
 Result: Model file created (finetuned_gpt2) with average loss: 8.87
 
+
 2) Model to Deployment (main.py)
 
+Utilizing the model file via a FastAPI app, input is taken and output is given via get and post methods.
 
+Decision: Added an html input box to better visualize the operation.
+
+Result: Created both .sh and .bat files for both Unix and Windows platforms.
 
