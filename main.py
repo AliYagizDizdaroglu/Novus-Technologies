@@ -4,11 +4,9 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 app = FastAPI()
 
-# Load the fine-tuned GPT-2 model and tokenizer
 model = GPT2LMHeadModel.from_pretrained("finetuned_gpt2")
 tokenizer = GPT2Tokenizer.from_pretrained("finetuned_gpt2")
 
-# Set the maximum sequence length
 MAX_LENGTH = 1024
 
 @app.get("/", response_class=HTMLResponse)
@@ -28,13 +26,10 @@ async def get_form():
 
 @app.post("/generate_text/")
 async def generate_text(prompt: str = Form(...)):
-    # Encode the prompt using the tokenizer
     input_ids = tokenizer.encode(prompt, return_tensors="pt")
     
-    # Create the attention mask
     attention_mask = input_ids.ne(tokenizer.eos_token_id).long()
 
-    # Generate text with the model
     output = model.generate(
         input_ids=input_ids,
         attention_mask=attention_mask,
@@ -48,7 +43,6 @@ async def generate_text(prompt: str = Form(...)):
         num_return_sequences=1,
     )
 
-    # Decode the generated text and return it
     generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
     return {"generated_text": generated_text}
 
